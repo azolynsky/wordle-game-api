@@ -6,15 +6,15 @@ var _ = require('lodash');
 
 let games = [];
 
-router.get('/wordList', function(req, res, next) {
+router.get('/wordlist', function(req, res, next) {
   res.send(wordList);
 });
 
-router.get('/solutionList', function(req, res, next) {
+router.get('/solutionlist', function(req, res, next) {
   res.send(solutionList);
 });
 
-router.post('/newWord/:gameKey', function(req, res, next) {
+router.post('/newword/:gameKey', function(req, res, next) {
   let word = solutionList[_.random(solutionList.length)]
   let game = games.find(g => g.key === req.params.gameKey);
 
